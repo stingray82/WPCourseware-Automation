@@ -188,3 +188,115 @@ function remove_user_from_course_by_course_id( $email, $course_id ) {
 
     return $context;
 }
+
+// Optional logging helper
+if (!function_exists('wpcw_debug_log')) {
+    function wpcw_debug_log($message, $data = null) {
+        $log_dir = WP_CONTENT_DIR . '/logs';
+        $log_file = $log_dir . '/wpcw-debug.log';
+
+        if (!file_exists($log_dir)) {
+            mkdir($log_dir, 0755, true);
+        }
+
+        $timestamp = date('Y-m-d H:i:s');
+        $output = "[$timestamp] $message";
+
+        if ($data !== null) {
+            $output .= "\n" . print_r($data, true);
+        }
+
+        $output .= "\n" . str_repeat('-', 80) . "\n";
+        file_put_contents($log_file, $output, FILE_APPEND);
+    }
+}
+
+// Trigger when a unit is completed
+add_action('wpcw_user_completed_unit', function($user_id, $unit_id, $unitParentData) {
+    $user = get_userdata($user_id);
+
+    $data = [
+        'hook'         => 'wpcw_user_completed_unit',
+        'user_id'      => $user_id,
+        'username'     => $user->user_login,
+        'email'        => $user->user_email,
+        'unit_id'      => $unit_id,
+        'unit_title'   => get_the_title($unit_id),
+        'module_id'    => $unitParentData->module_id ?? '',
+        'module_title' => $unitParentData->module_title ?? '',
+        'course_id'    => $unitParentData->course_id ?? '',
+        'course_title' => $unitParentData->course_title ?? '',
+    ];
+
+    // wpcw_debug_log('Hook Fired (Unit)', $data);
+    do_action('flowmattic_trigger_wpcw_user_completed_unit', $data);
+}, 10, 3);
+
+// Trigger when a module is completed (via notification hook for full context)
+add_action('wpcw_user_completed_module_notification', function($unitParentData, $userDetails, $adminSubject, $adminBody) {
+    $data = [
+        'hook'         => 'wpcw_user_completed_module_notification',
+        'user_id'      => $userDetails->ID,
+        'username'     => $userDetails->user_login,
+        'email'        => $userDetails->user_email,
+        'module_id'    => $unitParentData->module_id ?? '',
+        'module_title' => $unitParentData->module_title ?? '',
+        'course_id'    => $unitParentData->course_id ?? '',
+        'course_title' => $unitParentData->course_title ?? '',
+        'course_link'  => get_permalink($unitParentData->course_id ?? ''),
+    ];
+
+    // wpcw_debug_log(' Hook Fired (Module)', $data);
+    do_action('flowmattic_trigger_wpcw_user_completed_module', $data);
+}, 10, 4);
+
+// Trigger when a course is completed (via notification hook for full context)
+add_action('wpcw_user_completed_course_notification', function($unitParentData, $userDetails, $adminSubject, $adminBody) {
+    $data = [
+        'hook'         => 'wpcw_user_completed_course_notification',
+        'user_id'      => $userDetails->ID,
+        'username'     => $userDetails->user_login,
+        'email'        => $userDetails->user_email,
+        'course_id'    => $unitParentData->course_id ?? '',
+        'course_title' => $unitParentData->course_title ?? '',
+        'course_link'  => get_permalink($unitParentData->course_id ?? ''),
+        'module_id'    => $unitParentData->module_id ?? '',
+        'module_title' => $unitParentData->module_title ?? '',
+    ];
+
+    // wpcw_debug_log(' Hook Fired (Course)', $data);
+    do_action('flowmattic_trigger_wpcw_user_completed_course', $data);
+}, 10, 4);
+
+// Trigger when a user is enrolled in one or more courses
+add_action('wpcw_enroll_user', function($user_id, $course_ids) {
+    $user = get_userdata($user_id);
+
+    if (!is_array($course_ids)) {
+        $course_ids = [$course_ids];
+    }
+
+    //wpcw_debug_log(' Raw $course_ids from WP Courseware', $course_ids);
+
+    foreach ($course_ids as $course_id) {
+        $course_details = function_exists('WPCW_courses_getCourseDetails') 
+            ? WPCW_courses_getCourseDetails($course_id) 
+            : null;
+
+        $data = [
+            'hook'         => 'wpcw_enroll_user',
+            'user_id'      => $user_id,
+            'username'     => $user->user_login,
+            'email'        => $user->user_email,
+            'course_id'    => $course_id,
+            'course_title' => $course_details->course_title ?? '',
+            'course_link'  => isset($course_details->course_post_id)
+                                ? get_permalink($course_details->course_post_id)
+                                : '',
+        ];
+
+        //wpcw_debug_log('Custom Hook Triggered: flowmattic_trigger_wpcw_enroll_user', $data);
+        do_action('flowmattic_trigger_wpcw_enroll_user', $data);
+    }
+}, 10, 2);
+
