@@ -5,7 +5,7 @@
  * Tested up to:        6.7.2
  * Requires at least:   6.5
  * Requires PHP:        8.0
- * Version:             1.1
+ * Version:             1.2
  * Author:              reallyusefulplugins.com
  * Author URI:          https://reallyusefulplugins.com
  * License:             GPL2
@@ -25,7 +25,13 @@ define('rup_wpc_auto_automation_for__wpcourseware_DIR', plugin_dir_path(__FILE__
 define('rup_wpc_auto_automation_for__wpcourseware_URL', plugin_dir_url(__FILE__));
 
 // Include functions (assuming functions.php is in the includes folder)
+require_once rup_wpc_auto_automation_for__wpcourseware_DIR . 'includes/install.php';
 require_once rup_wpc_auto_automation_for__wpcourseware_DIR . 'includes/functions.php';
+require_once rup_wpc_auto_automation_for__wpcourseware_DIR . 'includes/api.php';
+require_once rup_wpc_auto_automation_for__wpcourseware_DIR . 'includes/admin.php';
+require_once rup_wpc_auto_automation_for__wpcourseware_DIR . 'includes/webhook-dispatcher.php';
+require_once rup_wpc_auto_automation_for__wpcourseware_DIR . 'includes/webhook-admin.php';
+
 
 // Activation hook
 function rup_wpc_auto_automation_for__wpcourseware_activate() {
