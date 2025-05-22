@@ -1,5 +1,6 @@
-== Description ==
+A plugin to allow you to easily add or remove users from courses
 
+== Description ==
 A plugin to allow you to easily add or remove users from courses
 
 == Installation ==
