@@ -2,7 +2,7 @@
 /**
  * Plugin Name:         Automation for WPCourseware
  * Description:         A plugin to automatically enroll and remove users from courses using an automator like flowmattic
- * Tested up to:        6.7.2
+ * Tested up to:        6.8.1
  * Requires at least:   6.5
  * Requires PHP:        8.0
  * Version:             1.2
@@ -13,12 +13,13 @@
  * Text Domain:         automation-for-wpcourseware
  * Website:             https://reallyusefulplugins.com
  */
+
 if ( ! defined('ABSPATH') ) {
     exit; // Prevent direct access
 }
 
 // Define plugin constants
-define('rup_wpc_auto_automation_for__wpcourseware_VERSION', '1.0');
+define('rup_wpc_auto_automation_for__wpcourseware_VERSION', '1.2');
 define('rup_wpc_auto_automation_for__wpcourseware_SLUG', 'automation-for-wpcourseware'); // Replace with your unique slug if needed
 define('rup_wpc_auto_automation_for__wpcourseware_MAIN_FILE', __FILE__);
 define('rup_wpc_auto_automation_for__wpcourseware_DIR', plugin_dir_path(__FILE__));

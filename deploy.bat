@@ -9,7 +9,6 @@ SET "PLUGIN_FILE=%PLUGIN_DIR%\automation-for-wpcourseware.php"
 SET "CHANGELOG_FILE=C:\Users\Nathan\Git\rup-changelogs\rupchangelogger.txt"
 SET "STATIC_FILE=static.txt"
 SET "DEST_DIR=D:\updater.reallyusefulplugins.com\plugin-updates\custom-packages"
-
 REM ============================================
 REM VERIFY REQUIRED FILES EXIST
 REM ============================================
@@ -112,3 +111,4 @@ REM ============================================
 copy "%ZIP_FILE%" "%DEST_DIR%"
 echo Zip file copied to %DEST_DIR%.
 pause
+

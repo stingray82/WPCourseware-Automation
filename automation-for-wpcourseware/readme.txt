@@ -23,6 +23,10 @@ You need to call the required functions in Flowmattic as needed
 
 
 == Changelog ==
+= 1.09 (17 April 2025) =
+Improved: Fuzziness Again
+New: Tested to 6.8
+
 = 1.07 (27 March 2025) =
 Improved: Fuzziness in naming conventions of changelog headers
 
