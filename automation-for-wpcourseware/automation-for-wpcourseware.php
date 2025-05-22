@@ -1,17 +1,17 @@
 <?php
 /**
- * Plugin Name:         Automation for WPCourseware
- * Description:         A plugin to automatically enroll and remove users from courses using an automator like flowmattic
- * Tested up to:        6.8.1
- * Requires at least:   6.5
- * Requires PHP:        8.0
- * Version:             1.2
- * Author:              reallyusefulplugins.com
- * Author URI:          https://reallyusefulplugins.com
- * License:             GPL2
- * License URI:         https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:         automation-for-wpcourseware
- * Website:             https://reallyusefulplugins.com
+ * Plugin Name:       Automation for WPCourseware
+ * Description:       A plugin to automatically enroll and remove users from courses using an automator like flowmattic
+ * Tested up to:      6.8.1
+ * Requires at least: 6.5
+ * Requires PHP:      8.0
+ * Version:           1.2
+ * Author:            reallyusefulplugins.com
+ * Author URI:        https://reallyusefulplugins.com
+ * License:           GPL2
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       automation-for-wpcourseware
+ * Website:           https://reallyusefulplugins.com
  */
 
 if ( ! defined('ABSPATH') ) {

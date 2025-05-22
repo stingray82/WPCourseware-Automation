@@ -1,12 +1,15 @@
 == Description ==
+
 A plugin to allow you to easily add or remove users from courses
 
 == Installation ==
+
 1. Upload the `automation-for-wpcourseware` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Its now ready to use
 
 == Frequently Asked Questions ==
+
 = How do I add use the plugin? =
 You need to call the required functions in Flowmattic as needed
 
