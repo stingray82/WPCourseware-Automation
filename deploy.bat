@@ -11,6 +11,8 @@ IF "%PLUGIN_DIR:~-1%"=="\" SET "PLUGIN_DIR=%PLUGIN_DIR:~0,-1%"
 SET "PLUGIN_FILE=%PLUGIN_DIR%\automation-for-wpcourseware.php"
 SET "CHANGELOG_FILE=C:\Users\Nathan\Git\rup-changelogs\automation-for-wpcourseware.txt"
 SET "STATIC_FILE=static.txt"
+SET "README=%PLUGIN_DIR%\readme.txt"
+SET "TEMP_README=%PLUGIN_DIR%\readme_temp.txt"
 SET "DEST_DIR=D:\updater.reallyusefulplugins.com\plugin-updates\custom-packages"
 
 SET "DEPLOY_TARGET=private"  REM github or private
