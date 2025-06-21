@@ -25,8 +25,8 @@ A plugin to allow you to easily add or remove users from courses
 = How do I add use the plugin? =
 You need to call the required functions in Flowmattic as needed
 
-
-== Changelog ==
+ 
+== Changelog == 
 = 1.2 (10 April 2025) = 
 New: Rest API (Enrol and Remove User)
 New: Webhook Triggers for Unit Complete, Module Complete, Course Complete and Enrolled on Course
