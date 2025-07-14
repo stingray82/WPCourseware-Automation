@@ -4,7 +4,7 @@ Donate link: https://reallyusefulplugins.com/donate
 Tags: Automation, WPCourseware, Flowmattic
 Requires at least: 6.5
 Tested up to: 6.8.1
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -27,6 +27,9 @@ You need to call the required functions in Flowmattic as needed
 
  
 == Changelog == 
+= 1.3.2 14 July 2025 =
+Update: UUPD 1.2.5
+
 = 1.3.1 06 July 2025 =
 New: Rescoped RUP_UUPD
 Update: UUPD 1.2.4

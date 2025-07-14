@@ -27,6 +27,10 @@ You need to call the required functions in Flowmattic as needed
 
  
 == Changelog == 
+= 1.3.1 06 July 2025 =
+New: Rescoped RUP_UUPD
+Update: UUPD 1.2.4
+
 = 1.3 21 June 2025 =
 New: Updates Now served directly from GitHub using UUPD
 
