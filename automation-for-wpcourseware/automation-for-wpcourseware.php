@@ -5,7 +5,7 @@
  * Tested up to:      6.8.2
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           1.3.3
+ * Version:           1.3.4
  * Author:            reallyusefulplugins.com
  * Author URI:        https://reallyusefulplugins.com
  * License:           GPL2
@@ -19,7 +19,7 @@ if ( ! defined('ABSPATH') ) {
 }
 
 // Define plugin constants
-define('rup_wpc_auto_automation_for__wpcourseware_VERSION', '1.3.3');
+define('rup_wpc_auto_automation_for__wpcourseware_VERSION', '1.3.4');
 define('rup_wpc_auto_automation_for__wpcourseware_SLUG', 'automation-for-wpcourseware'); // Replace with your unique slug if needed
 define('rup_wpc_auto_automation_for__wpcourseware_MAIN_FILE', __FILE__);
 define('rup_wpc_auto_automation_for__wpcourseware_DIR', plugin_dir_path(__FILE__));
@@ -67,3 +67,15 @@ add_action( 'plugins_loaded', function() {
     // 3) Call the helper in the UUPD\V1 namespace:
     \RUP\Updater\Updater_V1::register( $updater_config );
 }, 20 );
+
+
+// MainWP Icon Filter
+add_filter('mainwp_child_stats_get_plugin_info', function($info, $slug) {
+
+    if ('automation-for-wpcourseware/automation-for-wpcourseware.php' === $slug) {
+        $info['icon'] = 'https://raw.githubusercontent.com/stingray82/WPCourseware-Automation/main/uupd/icon-128.png'; // Supported types: jpeg, jpg, gif, ico, png
+    }
+
+    return $info;
+
+}, 10, 2);
