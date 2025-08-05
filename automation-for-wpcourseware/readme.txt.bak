@@ -4,7 +4,7 @@ Donate link: https://reallyusefulplugins.com/donate
 Tags: Automation, WPCourseware, Flowmattic
 Requires at least: 6.5
 Tested up to: 6.8.2
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -27,6 +27,9 @@ You need to call the required functions in Flowmattic as needed
 
  
 == Changelog == 
+= 1.3.4 2 Aug 2025 =
+New: MainWP Icon Filter
+
 = 1.3.3 27 July 2025 =
 New: Prepare Future Support for Preleases
 New: Updated UUPD to 1.3.0
