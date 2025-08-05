@@ -70,8 +70,6 @@ add_action( 'plugins_loaded', function() {
 
 
 // MainWP Icon Filter
-
-/*
 add_filter('mainwp_child_stats_get_plugin_info', function($info, $slug) {
 
     if ('automation-for-wpcourseware/automation-for-wpcourseware.php' === $slug) {
@@ -81,5 +79,3 @@ add_filter('mainwp_child_stats_get_plugin_info', function($info, $slug) {
     return $info;
 
 }, 10, 2);
-
-*/
