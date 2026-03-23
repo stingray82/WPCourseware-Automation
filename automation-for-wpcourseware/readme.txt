@@ -3,8 +3,8 @@ Contributors: reallyusefulplugins
 Donate link: https://reallyusefulplugins.com/donate
 Tags: Automation, WPCourseware, Flowmattic
 Requires at least: 6.5
-Tested up to: 6.8.2
-Stable tag: 1.3.6
+Tested up to: 6.9.4
+Stable tag: 1.3.7
 Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -27,10 +27,14 @@ You need to call the required functions in Flowmattic as needed
 
 
 == Changelog ==
+= 1.3.7 23 March 2026 =
+Update: Updater to 2.0-Alpha
+Update: Compatibility
+
 = 1.3.6 12 August 2025 =
 New: Deploy Methodology 
 New: Production Test - New deploy.sh 
-Fixed: Icon Issue
+Fixed: Icon Issue 
 
 = 1.3.5 5 August 2025 =
 Fixed: Comment out WP Icon Filter which is causing issues in latest MainWP
